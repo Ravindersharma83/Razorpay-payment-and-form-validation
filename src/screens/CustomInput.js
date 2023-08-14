@@ -14,6 +14,7 @@ const CustomInput = (props) => {
         <TextInput
         style={[
             styles.textInput,
+            props.multiline && { height: props.numberOfLines * 40 }, // for multi line textinput
             hasError && styles.errorInput
         ]}
         value={value}
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderWidth: StyleSheet.hairlineWidth,
         borderRadius: 10,
+        textAlignVertical: 'top'
       },
       errorText: {
         fontSize: 10,
